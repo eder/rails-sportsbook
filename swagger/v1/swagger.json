@@ -1,0 +1,46 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/sports": {
+      "post": {
+        "summary": "Creates a Sport",
+        "tags": [
+          "Sports"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sport",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "active": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "name",
+                "active"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "sport created"
+          }
+        }
+      }
+    }
+  }
+}
