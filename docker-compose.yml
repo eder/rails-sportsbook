@@ -7,7 +7,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 12345
       MYSQL_DATABASE: sportsbook_development
-      MYSQL_USER: user_sportbook
+      MYSQL_USER: root
       MYSQL_PASSWORD: 12345
     ports:
       - "3306:3306"
