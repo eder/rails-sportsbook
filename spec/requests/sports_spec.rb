@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 require 'swagger_helper'
 
 describe 'Sports API' do
-
   path '/api/v1/sports' do
-
     post 'Create a new sport' do
       tags 'Sports'
       consumes 'application/json'
@@ -14,7 +14,7 @@ describe 'Sports API' do
           slug: { type: :string },
           active: { type: :boolean }
         },
-        required: ['name', 'slug', 'active']
+        required: %w[name slug active]
       }
 
       response '201', 'sport created' do
@@ -39,7 +39,6 @@ describe 'Sports API' do
   end
 
   path '/api/v1/sports/{id}' do
-
     get 'Retrieve a sport' do
       tags 'Sports'
       produces 'application/json'
@@ -51,7 +50,7 @@ describe 'Sports API' do
       end
 
       response '404', 'sport not found' do
-        let(:id) { 123456 }
+        let(:id) { 123_456 }
         run_test!
       end
     end
@@ -76,7 +75,7 @@ describe 'Sports API' do
       end
 
       response '404', 'sport not found' do
-        let(:id) { 123456 }
+        let(:id) { 123_456 }
         let(:sport) { { name: 'American Football' } }
         run_test!
       end
@@ -92,10 +91,9 @@ describe 'Sports API' do
       end
 
       response '404', 'sport not found' do
-        let(:id) { 123456 }
+        let(:id) { 123_456 }
         run_test!
       end
     end
   end
 end
-
