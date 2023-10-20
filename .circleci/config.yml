@@ -3,11 +3,11 @@ version: 2.1
 executors:
   ruby_docker:
     docker:
-      - image: circleci/ruby:3.0.3
+      - image: cimg/ruby:3.0.3
         environment:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
-      - image: circleci/mysql:8.0
+      - image:  cimg/mysql:8.0
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
 
